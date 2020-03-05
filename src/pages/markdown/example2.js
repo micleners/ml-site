@@ -4,10 +4,10 @@ import { Link } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 
-const example1 = ({ data }) => {
+const example2 = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Example 1" />
+      <SEO title="Example 2" />
       <div
         dangerouslySetInnerHTML={{
           __html: data.allMarkdownRemark.edges[0].node.html,
@@ -18,11 +18,11 @@ const example1 = ({ data }) => {
   )
 }
 
-export default example1
+export default example2
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      filter: { id: { eq: "572aae5b-ee20-57a0-b898-7b8b599f3a7a" } }
+      filter: { id: { eq: "f0232518-d6ff-52a1-aa28-032267eceb38" } }
     ) {
       edges {
         node {
