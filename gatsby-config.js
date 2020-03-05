@@ -9,6 +9,20 @@ module.exports = {
   },
   plugins: [
     `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+              quality: 100,
+            },
+          },
+        ],
+      },
+    },
     `gatsby-transformer-json`,
     `gatsby-plugin-styled-components`,
     // to setup contentful, run the following command in the terminal:
@@ -39,6 +53,20 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown`,
+        path: `${__dirname}/src/markdown`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `json`,
+        path: `${__dirname}/src/json`,
       },
     },
     `gatsby-transformer-sharp`,

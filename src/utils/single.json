@@ -1,0 +1,40 @@
+{
+  "_id": "5e6154c3fc6882fe79bc61ba",
+  "index": 0,
+  "guid": "72575495-3f98-4b7c-81b3-60015c38c7db",
+  "isActive": false,
+  "balance": "$1,942.26",
+  "picture": "http://placehold.it/32x32",
+  "age": 36,
+  "eyeColor": "brown",
+  "name": {
+    "first": "Bonita",
+    "last": "Parker"
+  },
+  "company": "EVENTAGE",
+  "email": "bonita.parker@eventage.info",
+  "phone": "+1 (889) 564-2873",
+  "address": "157 Strauss Street, Hannasville, District Of Columbia, 5712",
+  "about": "Minim officia fugiat aute et proident minim reprehenderit culpa duis sint aute reprehenderit veniam consequat. Adipisicing sint ut elit ipsum consectetur cillum sunt cupidatat id eu magna veniam sunt consectetur. Officia est est Lorem esse dolor proident. Aliquip adipisicing consectetur Lorem veniam exercitation pariatur do ullamco exercitation. Labore Lorem dolore aliqua minim esse. Adipisicing mollit officia pariatur pariatur deserunt officia veniam laboris duis dolor sunt ex. Ullamco aliquip sunt elit velit adipisicing qui sunt nulla pariatur in minim quis reprehenderit.",
+  "registered": "Saturday, July 9, 2016 6:02 PM",
+  "latitude": "-87.153112",
+  "longitude": "-4.184884",
+  "tags": ["do", "aute", "incididunt", "dolor", "nostrud"],
+  "range": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "friends": [
+    {
+      "id": 0,
+      "name": "Beasley Koch"
+    },
+    {
+      "id": 1,
+      "name": "Curry Faulkner"
+    },
+    {
+      "id": 2,
+      "name": "Enid Owens"
+    }
+  ],
+  "greeting": "Hello, Bonita! You have 7 unread messages.",
+  "favoriteFruit": "banana"
+}
