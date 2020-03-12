@@ -10,7 +10,7 @@ const example2 = ({ data }) => {
       <SEO title="Example 2" />
       <div
         dangerouslySetInnerHTML={{
-          __html: data.allMarkdownRemark.edges[0].node.html,
+          __html: data.html,
         }}
       />
       <Link to="/">Go back to the homepage</Link>
@@ -21,14 +21,8 @@ const example2 = ({ data }) => {
 export default example2
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(
-      filter: { id: { eq: "f0232518-d6ff-52a1-aa28-032267eceb38" } }
-    ) {
-      edges {
-        node {
-          html
-        }
-      }
+    markdownRemark(frontmatter: { path: { eq: "/markdown/example2" } }) {
+      html
     }
   }
 `

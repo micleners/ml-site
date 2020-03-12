@@ -21,14 +21,8 @@ const example1 = ({ data }) => {
 export default example1
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(
-      filter: { id: { eq: "572aae5b-ee20-57a0-b898-7b8b599f3a7a" } }
-    ) {
-      edges {
-        node {
-          html
-        }
-      }
+    markdownRemark(frontmatter: { path: { eq: "/markdown/example1" } }) {
+      html
     }
   }
 `

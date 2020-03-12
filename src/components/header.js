@@ -1,34 +1,50 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import styled from "@emotion/styled"
+import { Flex, Box, Text } from "rebass"
+
+import logo from "../images/logo.svg"
+
+const MenuLink = props => (
+  <Flex
+    alignItems="center"
+    px={3}
+    height="100%"
+    backgroundColor={"accent"}
+    sx={{ textDecoration: "none" }}
+    color="primary"
+    as={Link}
+    fontSize={"2"}
+    {...props}
+  >
+    {props.text}
+  </Flex>
+)
+
+const HeaderLink = styled(MenuLink)``
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
+  <Flex
+    backgroundColor={"bg2"}
+    pr={3}
+    height="70px"
+    width="100%"
+    alignItems="center"
+    className=""
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+    <Box as="img" src={logo} p={2} hieght="100%" alignSelf="stretch" />
+    <HeaderLink activeClassName="active" text="Michael Leners" to="" />
+    <Box flex="1 1 auto" />
+    <HeaderLink
+      bg="none"
+      activeClassName="active"
+      text="Projects"
+      to="/projects/"
+    />
+    <HeaderLink bg="none" activeClassName="active" text="Talks" to="/talks/" />
+    <HeaderLink bg="none" activeClassName="active" text="Blog" to="/blog/" />
+  </Flex>
 )
 
 Header.propTypes = {

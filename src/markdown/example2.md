@@ -1,3 +1,10 @@
+---
+path: "/markdown/example2"
+date: "2020-03-22"
+title: "Example 2"
+---
+
+
 # Purus quam reddat palmis
 
 ## Lapidem sex submovet deerit vidit a quidem

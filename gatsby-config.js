@@ -24,7 +24,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-json`,
-    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-emotion`,
     // to setup contentful, run the following command in the terminal:
     // npm install gatsby-source-contentful
     // then navigate to `env.development` and follow the instructions there

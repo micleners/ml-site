@@ -1,3 +1,10 @@
+---
+path: "/markdown/example1"
+date: "2020-03-20"
+title: "Example 1"
+---
+
+
 # Tribus quique huic
 
 ## Nemorum prosum percussis ire et magnis faciem

@@ -1,30 +1,19 @@
 export const theme = {
   breakpoints: ["600px", "900px", "1200px"],
+  fontSizes: [
+    "0.8em", // 0
+    "1em", // 1
+    "1.4em", // 2
+    "1.8em", // 3
+    "2.5em", // 4
+    "3em", // 5
+  ],
   colors: {
-    bg1: "#FFFFFF", // white
-    bg2: "#FFFFFF", // white
-    bg3: "#FFFFFF", // white
-    primary: "#435AD5", // blue
-    secondary: "#435AD5", // blue
-    ternary: "#435AD5", // blue
-    accent: "#DC333A", // red
-    text: "#3E3D4A",
-  },
-  space: [0, 4, 8, 16, 32, 64, 128, 256],
-}
-
-export const theme = {
-  breakpoints: ["600px", "900px", "1200px"],
-  fontSizes: ["1em", "1.2em", "1.5em", "1.8em", "2em", "2.5em", "3em"],
-  colors: {
-    bg1: "#F8F8FF", // white
-    bg2: "#F7F8FA", // grey
-    bg3: "#F1F8FF", // powder-blue
-    primary: "#435AD5", // blue
-    secondary: "#435AD5", // blue
-    ternary: "#435AD5", // blue
-    accent: "#DC333A", // red
-    text: "#3E3D4A",
+    bg1: "#121212", // black
+    bg2: "#353535", // grey
+    primary: "#E5E5E5", // light
+    secondary: "#03DAC5", // teal
+    accent: "#BB86FC", // light purple
     black: "#000000",
     white: "#FFFFFF",
   },
@@ -35,8 +24,8 @@ export const theme = {
     bold: 600,
   },
   fonts: {
-    text: "Lato, Arial, System-ui, sans-serif",
-    heading: "Lato, arial, system-ui, sans-serif",
+    text: "'Oxygen Mono', Arial, System-ui, sans-serif",
+    heading: "'Oxygen Mono', arial, system-ui, sans-serif",
   },
   borderRadius: "20px",
   lineHeights: {
