@@ -24,7 +24,7 @@ const Footer = ({ siteTitle }) => {
     <Box>
       <Flex mx={["2", "5%", "10%"]} >
         <Img
-          style={{ width: "100%" }}
+          style={{ maxWidth: "800px", width: "100%", margin: "auto  " }}
           fluid={data.footer.childImageSharp.fluid}
         />
       </Flex>

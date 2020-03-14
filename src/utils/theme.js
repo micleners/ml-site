@@ -11,6 +11,7 @@ export const theme = {
   colors: {
     bg1: "#121212", // black
     bg2: "#353535", // grey
+    bg3: "#404040", // grey
     primary: "#E5E5E5", // light
     secondary: "#03DAC5", // teal
     accent: "#BB86FC", // light purple

@@ -38,8 +38,8 @@ const Layout = ({ children }) => {
           }
 
           .active {
-            background: ${({ theme }) => theme.colors.accent};
-            color: ${({ theme }) => theme.colors.emphasis};
+            background: ${theme.colors.accent};
+            color: ${theme.colors.emphasis};
           }
         `}
       />
@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
       <Flex mx={["2", "5%", "10%"]} flexDirection="column">
         <main>{children}</main>
       </Flex>
-      <Footer />  
+      <Footer />
     </ThemeProvider>
   )
 }
