@@ -39,12 +39,10 @@ export const TalkHero = () => {
     .sort((a, b) => new Date(b.node.date) - new Date(a.node.date))
     .map(edge => {
       return {
-        name: edge.node.title + " " + edge.node.subtitle,
+        name: edge.node.title ? edge.node.title : "" + " " + edge.node.subtitle ? edge.node.subtitle : "",
         id: edge.node.id,
       }
     })
-
-  // const filteredList = talkList => talkList.filter((v, i) => talkList.indexOf(v.name) === i.name)
   return (
     <Flex justifyContent="space-between" flexDirection="column">
       <H1>

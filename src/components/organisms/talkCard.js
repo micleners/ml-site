@@ -35,6 +35,7 @@ export const TalkCard = ({
   title,
   subtitle,
   date,
+  excerpt,
   description,
   eventUrl,
   presentationUrl,
@@ -102,9 +103,17 @@ export const TalkCard = ({
           )}
         </Flex>
         {description && (
-          <Box mb={3} fontSize={[0, 1]}>
-            {description}
-          </Box>
+          <Box
+            mb={3}
+            fontSize={[0, 1]}
+            dangerouslySetInnerHTML={{ __html: description }}
+            css={theme => css`
+              a {
+                color: ${theme.colors.secondary};
+              }
+              }
+            `}
+          />
         )}
         <Flex
           mt="auto"

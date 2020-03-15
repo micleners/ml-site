@@ -23,6 +23,18 @@ export const TalkList = () => {
                 html
               }
             }
+            instances {
+              organizer {
+                name
+              }
+              sponsor {
+                businessName
+              }
+              location {
+                name
+              }
+              url
+            }
           }
         }
       }
@@ -52,7 +64,8 @@ export const TalkList = () => {
               date={edge.node.date}
               time={edge.node.time}
               subtitle={edge.node.subtitle}
-              description={edge.node.abstract.childMarkdownRemark.excerpt}
+              excerpt={edge.node.abstract.childMarkdownRemark.excerpt}
+              description={edge.node.abstract.childMarkdownRemark.html}
               image={data.micleners.childImageSharp.fixed}
               eventUrl={edge.node.url}
               repoUrl={edge.node.repo}
