@@ -87,7 +87,7 @@ export const TalkCard = ({
             <Text
               sx={{ textTransform: "uppercase" }}
               fontSize={[1, 2, 3]}
-              mt={[3, 3, 0]}
+              mt={[1, 1, 0]}
               mr={[0, 4]}
               lineHeight="1"
               color="primary"
@@ -96,7 +96,7 @@ export const TalkCard = ({
             </Text>
           )}
           {date && (
-            <Text fontSize={[0, 1]} mt={[1, 2, 2]} color="primary">
+            <Text fontSize={[0, 1]} mt={[2, 2, 2]} color="primary">
               {date}
             </Text>
           )}
@@ -106,21 +106,24 @@ export const TalkCard = ({
             {description}
           </Box>
         )}
-        <Flex mt="auto" width="100%">
+        <Flex
+          mt="auto"
+          width="100%"
+          flexDirection={["column", "row"]}
+          alignItems="flex-start"
+        >
           <a href={eventUrl}>
-            <Button sx={{ textDecoration: "none" }} mr={4}>
+            <Button mr={[0, 4]} mb={[2, 0]}>
               Event
             </Button>
           </a>
           <a href={repoUrl}>
-            <Button mr={4} sx={{ textDecoration: "none" }}>
+            <Button mr={[0, 4]} mb={[2, 0]}>
               Code
             </Button>
           </a>
           <a href={`${presentationUrl}`}>
-            <Button Presentation sx={{ textDecoration: "none" }}>
-              Presentation
-            </Button>
+            <Button>Presentation</Button>
           </a>
         </Flex>
       </Flex>

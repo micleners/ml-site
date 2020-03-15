@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Flex, Box, Heading, Text } from "rebass"
 import { css, jsx } from "@emotion/core"
 import { TalkCard } from "../organisms"
+import { H1 } from "../atoms"
 
 export const TalkHero = () => {
   const data = useStaticQuery(graphql`
@@ -46,9 +47,9 @@ export const TalkHero = () => {
   // const filteredList = talkList => talkList.filter((v, i) => talkList.indexOf(v.name) === i.name)
   return (
     <Flex justifyContent="space-between" flexDirection="column">
-      <Heading pt={5} as="h1" fontSize={7}>
+      <H1>
         Talks
-      </Heading>
+      </H1>
       <Heading pt={3} as="h2" fontSize={5}>
         Short List
       </Heading>

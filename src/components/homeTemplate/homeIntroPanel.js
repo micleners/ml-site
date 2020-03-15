@@ -1,7 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import { Flex, Text, Box , Heading} from "rebass"
+import { Flex, Text, Box, Heading } from "rebass"
+import { H1 } from "../atoms"
 
 const AboutMeList = props => (
   <Text
@@ -30,31 +31,40 @@ export const HomeIntroPanel = () => {
 
   return (
     <>
-      <Flex pt="100px" justifyContent="space-between" alignItems="flex-end">
-        <Box mb="2" width="275px">
+      <Flex
+        pt={[3, 4, "100px"]}
+        justifyContent="space-between"
+        alignItems={["center", "flex-end"]}
+        // flexWrap={["wrap", "nowrap", "nowrap"]}
+        flexDirection={["column", "row"]}
+      >
+        <Box mb="2" mt={[3, 0]} width="275px">
           <Img
             style={{ width: "100%" }}
             fluid={data.micleners.childImageSharp.fluid}
           />
         </Box>
         <Text
-          width="200px"
-          minWidth="140px"
+          width={["auto", "200px"]}
+          minWidth={["auto", "140px"]}
           fontSize="3"
-          mx={[3, 4]}
+          mx={[0, 4]}
+          my={[3, 0]}
           lineHeight="1.35"
         >
           I’m Michael Leners
         </Text>
-        <Flex flexDirection="column" justifyContent="flex-end">
+        <Flex
+          flexDirection="column"
+          alignItems={["center", "flex-start"]}
+          justifyContent="flex-end"
+        >
           <AboutMeList mb="2">full-stack web developer</AboutMeList>
           <AboutMeList mb="2">speaker</AboutMeList>
           <AboutMeList>consultant</AboutMeList>
         </Flex>
       </Flex>
-      <Heading pt={5} as="h1" fontSize={7}>
-        About Me
-      </Heading>
+      <H1>About Me</H1>
       <Text pb={3}>
         Formerly a physics University Instructor and Chemical Engineering
         graduate student, I am now a web developer. While I originally was
