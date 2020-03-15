@@ -55,7 +55,7 @@ const Header = ({ siteTitle }) => {
       alignItems="center"
       className=""
     >
-      <Box as="img" src={logo} p={1} mx={1} height="100%" alignSelf="stretch" />
+      <Box as="img" src={logo} p={1} mx={1} height="100%" alignSelf="stretch" alt="white line art icon of person behind a computer" />
       <HeaderLink activeClassName="active" text="Michael Leners" to="" />
       <Box flex="1 1 auto" />
       <HeaderLink text="Projects" to="/projects/" display={["none", "flex"]} />

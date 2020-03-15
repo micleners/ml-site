@@ -19,6 +19,7 @@ const Button = props => (
       &:hover {
         ${"" /* color: ${theme.colors.primary}; */}
         background: ${theme.colors.accent};
+        color: ${theme.colors.primary};
         transform: scale(1.01);
         ${elevation[4]}
       }
@@ -112,17 +113,17 @@ export const TalkCard = ({
           flexDirection={["column", "row"]}
           alignItems="flex-start"
         >
-          <a href={eventUrl}>
+          <a href={eventUrl} style={{textDecoration: "none"}}>
             <Button mr={[0, 4]} mb={[2, 0]}>
               Event
             </Button>
           </a>
-          <a href={repoUrl}>
+          <a href={repoUrl} style={{textDecoration: "none"}}>
             <Button mr={[0, 4]} mb={[2, 0]}>
               Code
             </Button>
           </a>
-          <a href={`${presentationUrl}`}>
+          <a href={`${presentationUrl}`} style={{textDecoration: "none"}}>
             <Button>Presentation</Button>
           </a>
         </Flex>
