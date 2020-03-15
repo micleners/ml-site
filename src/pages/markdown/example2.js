@@ -8,21 +8,21 @@ const example2 = ({ data }) => {
   return (
     <Layout>
       <SEO title="Example 2" />
-      <div
+      {/* <div
         dangerouslySetInnerHTML={{
           __html: data.html,
         }}
-      />
+      /> */}
       <Link to="/">Go back to the homepage</Link>
     </Layout>
   )
 }
 
 export default example2
-export const pageQuery = graphql`
-  query {
-    markdownRemark(frontmatter: { path: { eq: "/markdown/example2" } }) {
-      html
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query {
+//     markdownRemark(frontmatter: { path: { eq: "/markdown/example2" } }) {
+//       html
+//     }
+//   }
+// `
