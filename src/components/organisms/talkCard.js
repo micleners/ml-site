@@ -44,11 +44,10 @@ export const TalkCard = ({
   time,
   instances,
 }) => {
-  console.log(eventUrl)
   return (
     <Flex
       flexDirection={["column", "column", "row"]}
-      p={4}
+      p={[2, 3, 4]}
       my={[2, 3, 4]}
       backgroundColor={"bg2"}
       width="100%"

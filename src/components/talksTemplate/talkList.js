@@ -54,7 +54,6 @@ export const TalkList = () => {
       }
     }
   `)
-  console.log(data)
   return (
     <Flex justifyContent="space-between" flexDirection="column">
       <Heading pt={3} as="h2" fontSize={5}>
@@ -64,7 +63,6 @@ export const TalkList = () => {
       {data.allContentfulEvent.edges
         .sort((a, b) => new Date(b.node.date) - new Date(a.node.date))
         .map(edge => {
-          console.log(edge.node)
           return (
             <TalkCard
               key={edge.node.id}
