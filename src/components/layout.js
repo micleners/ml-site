@@ -6,7 +6,6 @@ import { ThemeProvider } from "emotion-theming"
 import { theme } from "../utils"
 
 import Header from "./header"
-import "./layout.css"
 import { Flex } from "rebass"
 import Footer from "./footer"
 

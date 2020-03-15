@@ -3,11 +3,12 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { TalkList } from "../components/talksTemplate"
+import { TalkList, TalkHero } from "../components/talksTemplate"
 
 const Blog = () => (
   <Layout>
     <SEO title="Talks" />
+    <TalkHero />
     <TalkList />
   </Layout>
 )

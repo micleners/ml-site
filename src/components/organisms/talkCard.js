@@ -1,8 +1,7 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { Link } from "gatsby"
 import { css, jsx } from "@emotion/core"
-import { theme } from "../../utils"
 import elevation from "../../utils/elevation"
 import { Flex, Text, Box } from "rebass"
 
@@ -30,27 +29,37 @@ const Button = props => (
   </Text>
 )
 
-export const TalkCard = ({ image, title, date, description, urls }) => {
+export const TalkCard = ({
+  id,
+  image,
+  title,
+  subtitle,
+  date,
+  description,
+  eventUrl,
+  presentationUrl,
+  repoUrl,
+  time,
+}) => {
+  console.log(eventUrl)
   return (
     <Flex
       flexDirection={["column", "column", "row"]}
       p={4}
+      my={[2, 3, 4]}
       backgroundColor={"bg2"}
       width="100%"
       sx={{ borderRadius: "5px", boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
     >
       <Box
         mr={3}
-        // width="210px"
-        // height="210px"
-        // p="10px"
         width="200px"
         height="200px"
         backgroundColor="bg3"
         sx={{ borderRadius: "5px" }}
       >
         <Img
-          fluid={image}
+          fixed={image}
           style={{ width: "100%", height: "100%", borderRadius: "5px" }}
         />
       </Box>
@@ -58,20 +67,61 @@ export const TalkCard = ({ image, title, date, description, urls }) => {
         <Flex
           alignItems="baseline"
           mb={3}
-          flexDirection={["column", "column", "row"]}
+          flexDirection={["column", "column", "column"]}
         >
-          <Text fontSize={[2, 3]} mt={[3, 3, 0]} mr={[0, 4]} color="primary">
-            {title}
-          </Text>
-          <Text fontSize={[1, 2]} mt={[3, 3, 0]} color="primary">
-            {date}
-          </Text>
+          {title && (
+            <a name={id}>
+              <Text
+                sx={{ textTransform: "uppercase" }}
+                fontSize={[2, 3, 4]}
+                mt={[3, 3, 0]}
+                mr={[0, 4]}
+                lineHeight="1"
+                color="primary"
+              >
+                {title}
+              </Text>
+            </a>
+          )}
+          {subtitle && (
+            <Text
+              sx={{ textTransform: "uppercase" }}
+              fontSize={[1, 2, 3]}
+              mt={[3, 3, 0]}
+              mr={[0, 4]}
+              lineHeight="1"
+              color="primary"
+            >
+              {subtitle}
+            </Text>
+          )}
+          {date && (
+            <Text fontSize={[0, 1]} mt={[1, 2, 2]} color="primary">
+              {date}
+            </Text>
+          )}
         </Flex>
-        <Box mb={3}>{description}</Box>
+        {description && (
+          <Box mb={3} fontSize={[0, 1]}>
+            {description}
+          </Box>
+        )}
         <Flex mt="auto" width="100%">
-          <Button mr={4}>Details</Button>
-          <Button mr={4}>Code</Button>
-          {/* <Button>Talks</Button> */}
+          <a href={eventUrl}>
+            <Button sx={{ textDecoration: "none" }} mr={4}>
+              Event
+            </Button>
+          </a>
+          <a href={repoUrl}>
+            <Button mr={4} sx={{ textDecoration: "none" }}>
+              Code
+            </Button>
+          </a>
+          <a href={`${presentationUrl}`}>
+            <Button Presentation sx={{ textDecoration: "none" }}>
+              Presentation
+            </Button>
+          </a>
         </Flex>
       </Flex>
     </Flex>

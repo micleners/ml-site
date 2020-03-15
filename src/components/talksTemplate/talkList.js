@@ -1,11 +1,31 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { Flex, Text, Box } from "rebass"
+import { Flex, Heading } from "rebass"
 import { TalkCard } from "../organisms"
 
 export const TalkList = () => {
   const data = useStaticQuery(graphql`
     query {
+      allContentfulEvent {
+        edges {
+          node {
+            id
+            title
+            subtitle
+            url
+            repo
+            presentation
+            date: time(formatString: "M/D/YYYY")
+            time: time(formatString: "h:mma")
+            abstract {
+              childMarkdownRemark {
+                excerpt
+                html
+              }
+            }
+          }
+        }
+      }
       micleners: file(relativePath: { eq: "micleners.jpeg" }) {
         childImageSharp {
           fixed(height: 200) {
@@ -15,15 +35,32 @@ export const TalkList = () => {
       }
     }
   `)
-
+  console.log(data)
   return (
-    <Flex py="100px" justifyContent="space-between">
-      <TalkCard
-        title="Gatsby and Contentful"
-        date="3/11/20"
-        description="This is the description of the talk. I mention for what organization it was a part of. I also mention the location maybe? Duration? Maybe something witty too."
-        image={data.micleners.childImageSharp.fixed}
-      ></TalkCard>
+    <Flex justifyContent="space-between" flexDirection="column">
+      <Heading pt={3} as="h2" fontSize={5}>
+        Details
+      </Heading>
+
+      {data.allContentfulEvent.edges
+        .sort((a, b) => new Date(b.node.date) - new Date(a.node.date))
+        .map(edge => {
+          return (
+            <TalkCard
+              key={edge.node.id}
+              title={edge.node.title}
+              date={edge.node.date}
+              time={edge.node.time}
+              subtitle={edge.node.subtitle}
+              description={edge.node.abstract.childMarkdownRemark.excerpt}
+              image={data.micleners.childImageSharp.fixed}
+              eventUrl={edge.node.url}
+              repoUrl={edge.node.repo}
+              presentationUrl={edge.node.presentation}
+              id={edge.node.id}
+            ></TalkCard>
+          )
+        })}
     </Flex>
   )
 }
