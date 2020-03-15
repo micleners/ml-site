@@ -39,7 +39,7 @@ export const TalkHero = () => {
     .sort((a, b) => new Date(b.node.date) - new Date(a.node.date))
     .map(edge => {
       return {
-        name: edge.node.title ? edge.node.title : "" + " " + edge.node.subtitle ? edge.node.subtitle : "",
+        name: (edge.node.title ? edge.node.title : "") + " " + (edge.node.subtitle ? edge.node.subtitle : ""),
         id: edge.node.id,
       }
     })
@@ -56,16 +56,16 @@ export const TalkHero = () => {
           return (
             <a
               href={`#${talk.id}`}
+              key={talk.id}
               css={theme => css`
                 color: ${theme.colors.secondary};
                 transition-duration: 0.2s;
                 &:hover {
                   color: ${theme.colors.primary};
                   transform: scale(1.01);
-                  
+
                   div {
                     background: ${theme.colors.accent};
-                    
                   }
                 }
               `}

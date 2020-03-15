@@ -17,7 +17,6 @@ const Button = props => (
       border-radius: 5px;
       transition-duration: 0.2s;
       &:hover {
-        ${"" /* color: ${theme.colors.primary}; */}
         background: ${theme.colors.accent};
         color: ${theme.colors.primary};
         transform: scale(1.01);
@@ -33,6 +32,7 @@ const Button = props => (
 export const TalkCard = ({
   id,
   image,
+  talkImage,
   title,
   subtitle,
   date,
@@ -42,6 +42,7 @@ export const TalkCard = ({
   presentationUrl,
   repoUrl,
   time,
+  instances,
 }) => {
   console.log(eventUrl)
   return (
@@ -56,14 +57,23 @@ export const TalkCard = ({
       <Box
         mr={3}
         width="200px"
+        minWidth="200px"
         height="200px"
         backgroundColor="bg3"
         sx={{ borderRadius: "5px" }}
       >
-        <Img
-          fixed={image}
-          style={{ width: "100%", height: "100%", borderRadius: "5px" }}
-        />
+        {!talkImage && (
+          <Img
+            fixed={image}
+            style={{ width: "100%", height: "100%", borderRadius: "5px" }}
+          />
+        )}
+        {talkImage && (
+          <img
+            src={talkImage}
+            style={{ width: "100%", height: "100%", borderRadius: "5px" }}
+          />
+        )}
       </Box>
       <Flex width="100%" flexDirection="column" alignItems="space-between">
         <Flex
@@ -97,11 +107,30 @@ export const TalkCard = ({
               {subtitle}
             </Text>
           )}
-          {date && (
+          {!instances && date && (
             <Text fontSize={[0, 1]} mt={[2, 2, 2]} color="primary">
               {date}
             </Text>
           )}
+
+          {instances &&
+            instances.map(instance => (
+              <Flex key={instance.id}>
+                <Text fontSize={[0, 1]} mt={[2, 2, 2]} pr={2} color="primary">
+                  {instance.date}{" "}
+                </Text>
+                {instance.organizer && instance.organizer.name && (
+                    <Text fontSize={[0, 1]} mt={[2, 2, 2]} pr={2} color="primary">
+                      * From {instance.organizer.name}
+                    </Text>
+                )}
+                {instance.location && instance.location.name && (
+                  <Text fontSize={[0, 1]} mt={[2, 2, 2]} color="primary">
+                    * At {instance.location.name}
+                  </Text>
+                )}
+              </Flex>
+            ))}
         </Flex>
         {description && (
           <Box
@@ -111,7 +140,10 @@ export const TalkCard = ({
             css={theme => css`
               a {
                 color: ${theme.colors.secondary};
-              }
+                &:hover {
+                  background: ${theme.colors.accent};
+                  color: ${theme.colors.primary};
+                }
               }
             `}
           />
@@ -122,17 +154,17 @@ export const TalkCard = ({
           flexDirection={["column", "row"]}
           alignItems="flex-start"
         >
-          <a href={eventUrl} style={{textDecoration: "none"}}>
+          <a href={eventUrl} style={{ textDecoration: "none" }}>
             <Button mr={[0, 4]} mb={[2, 0]}>
               Event
             </Button>
           </a>
-          <a href={repoUrl} style={{textDecoration: "none"}}>
+          <a href={repoUrl} style={{ textDecoration: "none" }}>
             <Button mr={[0, 4]} mb={[2, 0]}>
               Code
             </Button>
           </a>
-          <a href={`${presentationUrl}`} style={{textDecoration: "none"}}>
+          <a href={presentationUrl} style={{ textDecoration: "none" }}>
             <Button>Presentation</Button>
           </a>
         </Flex>

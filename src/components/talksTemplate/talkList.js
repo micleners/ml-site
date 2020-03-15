@@ -23,7 +23,14 @@ export const TalkList = () => {
                 html
               }
             }
+            image {
+              file {
+                url
+              }
+            }
             instances {
+              id
+              date: time(formatString: "M/D/YYYY")
               organizer {
                 name
               }
@@ -57,6 +64,7 @@ export const TalkList = () => {
       {data.allContentfulEvent.edges
         .sort((a, b) => new Date(b.node.date) - new Date(a.node.date))
         .map(edge => {
+          console.log(edge.node)
           return (
             <TalkCard
               key={edge.node.id}
@@ -67,6 +75,8 @@ export const TalkList = () => {
               excerpt={edge.node.abstract.childMarkdownRemark.excerpt}
               description={edge.node.abstract.childMarkdownRemark.html}
               image={data.micleners.childImageSharp.fixed}
+              talkImage={edge.node.image ? edge.node.image.file.url : null}
+              instances={edge.node.instances}
               eventUrl={edge.node.url}
               repoUrl={edge.node.repo}
               presentationUrl={edge.node.presentation}
