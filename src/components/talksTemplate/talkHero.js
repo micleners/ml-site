@@ -60,9 +60,13 @@ export const TalkHero = () => {
                 color: ${theme.colors.secondary};
                 transition-duration: 0.2s;
                 &:hover {
-                  color: ${theme.colors.accent};
-                  background: ${theme.colors.accent};
+                  color: ${theme.colors.primary};
                   transform: scale(1.01);
+                  
+                  div {
+                    background: ${theme.colors.accent};
+                    
+                  }
                 }
               `}
             >

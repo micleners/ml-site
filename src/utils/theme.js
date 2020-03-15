@@ -16,7 +16,7 @@ export const theme = {
     bg3: "#404040", // grey
     primary: "#E5E5E5", // light
     secondary: "#03DAC5", // teal
-    accent: "#380179", // dark purple
+    accent: "#705096", // dark purple
     // accent: "#BB86FC", // light purple
     black: "#000000",
     white: "#FFFFFF",
