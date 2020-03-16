@@ -56,7 +56,7 @@ export const TalkList = () => {
   `)
   return (
     <Flex justifyContent="space-between" flexDirection="column">
-      <Heading pt={3} as="h2" fontSize={5}>
+      <Heading pt={3} as="h2" fontSize={[3, 4, 5]}>
         Details
       </Heading>
 

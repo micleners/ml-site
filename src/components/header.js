@@ -49,6 +49,7 @@ const Header = props => {
     position: absolute;
     right: 0;
     top: 70px;
+    z-index: 1;
     transform: translateY(calc(-140%));
     transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-140%)")};
   `

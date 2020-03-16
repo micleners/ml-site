@@ -48,7 +48,7 @@ export const TalkHero = () => {
       <H1>
         Talks
       </H1>
-      <Heading pt={3} as="h2" fontSize={5}>
+      <Heading pt={3} as="h2" fontSize={[3,4,5]}>
         Short List
       </Heading>
       <Box py="20px">

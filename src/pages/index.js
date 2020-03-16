@@ -20,7 +20,6 @@ const IndexPage = () => (
     <SEO title="Home" />
     <HomeIntroPanel />
   </Layout>
-  
 )
 
 export default IndexPage

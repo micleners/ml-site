@@ -59,6 +59,7 @@ export const TalkCard = ({
         minWidth="200px"
         height="200px"
         backgroundColor="bg3"
+        alignSelf={["center", "flex-start"]}
         sx={{ borderRadius: "5px" }}
       >
         {!talkImage && (
@@ -70,14 +71,18 @@ export const TalkCard = ({
         {talkImage && (
           <img
             src={talkImage}
-            style={{ width: "100%", height: "100%", borderRadius: "5px" }}
+            style={{
+              width: "100%",
+              height: "100%",
+              borderRadius: "5px",
+              justifySelf: "center",
+            }}
           />
         )}
       </Box>
       <Flex width="100%" flexDirection="column" alignItems="space-between">
         <Flex
           alignItems="baseline"
-          mb={3}
           flexDirection={["column", "column", "column"]}
         >
           {title && (
@@ -114,18 +119,22 @@ export const TalkCard = ({
 
           {instances &&
             instances.map(instance => (
-              <Flex key={instance.id}>
-                <Text fontSize={[0, 1]} mt={[2, 2, 2]} pr={2} color="primary">
-                  {instance.date}{" "}
+              <Flex
+                key={instance.id}
+                mt={[2, 2, 2]}
+                flexWrap="wrap"
+              >
+                <Text fontSize={[0, 1]} pr={2} color="primary">
+                  {instance.date}
                 </Text>
                 {instance.organizer && instance.organizer.name && (
-                    <Text fontSize={[0, 1]} mt={[2, 2, 2]} pr={2} color="primary">
-                      * From {instance.organizer.name}
-                    </Text>
+                  <Text fontSize={[0, 1]} pr={2} color="primary">
+                    with {instance.organizer.name}
+                  </Text>
                 )}
                 {instance.location && instance.location.name && (
-                  <Text fontSize={[0, 1]} mt={[2, 2, 2]} color="primary">
-                    * At {instance.location.name}
+                  <Text fontSize={[0, 1]} color="primary">
+                    at {instance.location.name}
                   </Text>
                 )}
               </Flex>
@@ -150,8 +159,10 @@ export const TalkCard = ({
         <Flex
           mt="auto"
           width="100%"
-          flexDirection={["column", "row"]}
-          alignItems="flex-start"
+          flexDirection={["row"]}
+          alignItems={["flex-start"]}
+          justifyContent={["space-around", "flex-start"]}
+          flexWrap="wrap"
         >
           <a href={eventUrl} style={{ textDecoration: "none" }}>
             <Button mr={[0, 4]} mb={[2, 0]}>
