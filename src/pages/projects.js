@@ -9,7 +9,7 @@ import { H1 } from "../components/atoms"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Blog = () => {
+const Projects = () => {
   const data = useStaticQuery(graphql`
     query {
       ethanPortfolio: file(relativePath: { eq: "ethan_portfiolio.png" }) {
@@ -166,7 +166,7 @@ const Blog = () => {
   return (
     <Layout>
       <SEO title="Projects" />
-      <H1 fontSize={[3, 4, 5]}>Project</H1>
+      <H1>Project</H1>
       <ProjectCard
         image={data.ethanPortfolio.childImageSharp.fixed}
         title="Ethan Leners:"
@@ -181,4 +181,4 @@ const Blog = () => {
   )
 }
 
-export default Blog
+export default Projects
