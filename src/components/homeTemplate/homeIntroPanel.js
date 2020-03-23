@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import { Flex, Text, Box, Heading } from "rebass"
+import { Flex, Text, Box } from "rebass"
 import { H1 } from "../atoms"
 
 const AboutMeList = props => (

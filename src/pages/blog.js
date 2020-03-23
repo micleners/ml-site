@@ -91,18 +91,16 @@ const Blog = () => {
             flexDirection={["column", "column", "column"]}
           >
             {title && (
-              <a name={id}>
-                <Text
-                  sx={{ textTransform: "uppercase" }}
-                  fontSize={[2, 3, 4]}
-                  mt={[3, 3, 0]}
-                  mr={[0, 4]}
-                  lineHeight="1"
-                  color="primary"
-                >
-                  {title}
-                </Text>
-              </a>
+              <Text
+                sx={{ textTransform: "uppercase" }}
+                fontSize={[2, 3, 4]}
+                mt={[3, 3, 0]}
+                mr={[0, 4]}
+                lineHeight="1"
+                color="primary"
+              >
+                {title}
+              </Text>
             )}
             {subtitle && (
               <Text

@@ -1,9 +1,8 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import styled from "@emotion/styled"
-import { css, jsx } from "@emotion/core"
-import { Flex, Box, Text } from "rebass"
+import { Flex, Box } from "rebass"
 import { theme } from "../utils/theme"
 import { Burger } from "./atoms"
 

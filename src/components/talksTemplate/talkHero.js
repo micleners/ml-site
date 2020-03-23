@@ -1,8 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Flex, Box, Heading, Text } from "rebass"
-import { css, jsx } from "@emotion/core"
-import { TalkCard } from "../organisms"
+import { css } from "@emotion/core"
 import { H1 } from "../atoms"
 
 export const TalkHero = () => {

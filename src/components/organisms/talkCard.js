@@ -1,7 +1,6 @@
 import React from "react"
 import Img from "gatsby-image"
-import { Link } from "gatsby"
-import { css, jsx } from "@emotion/core"
+import { css } from "@emotion/core"
 import elevation from "../../utils/elevation"
 import { Flex, Text, Box } from "rebass"
 
@@ -64,6 +63,7 @@ export const TalkCard = ({
       >
         {!talkImage && (
           <Img
+            alt="logo of talk"
             fixed={image}
             style={{ width: "100%", height: "100%", borderRadius: "5px" }}
           />
@@ -71,6 +71,7 @@ export const TalkCard = ({
         {talkImage && (
           <img
             src={talkImage}
+            alt="logo of talk"
             style={{
               width: "100%",
               height: "100%",
@@ -86,18 +87,16 @@ export const TalkCard = ({
           flexDirection={["column", "column", "column"]}
         >
           {title && (
-            <a name={id}>
-              <Text
-                sx={{ textTransform: "uppercase" }}
-                fontSize={[2, 3, 4]}
-                mt={[3, 3, 0]}
-                mr={[0, 4]}
-                lineHeight="1"
-                color="primary"
-              >
-                {title}
-              </Text>
-            </a>
+            <Text
+              sx={{ textTransform: "uppercase" }}
+              fontSize={[2, 3, 4]}
+              mt={[3, 3, 0]}
+              mr={[0, 4]}
+              lineHeight="1"
+              color="primary"
+            >
+              {title}
+            </Text>
           )}
           {subtitle && (
             <Text
@@ -119,11 +118,7 @@ export const TalkCard = ({
 
           {instances &&
             instances.map(instance => (
-              <Flex
-                key={instance.id}
-                mt={[2, 2, 2]}
-                flexWrap="wrap"
-              >
+              <Flex key={instance.id} mt={[2, 2, 2]} flexWrap="wrap">
                 <Text fontSize={[0, 1]} pr={2} color="primary">
                   {instance.date}
                 </Text>

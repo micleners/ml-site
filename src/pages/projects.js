@@ -91,18 +91,16 @@ const Projects = () => {
             flexDirection={["column", "column", "column"]}
           >
             {title && (
-              <a name={id}>
-                <Text
-                  sx={{ textTransform: "uppercase" }}
-                  fontSize={[2, 3, 4]}
-                  mt={[3, 3, 0]}
-                  mr={[0, 4]}
-                  lineHeight="1"
-                  color="primary"
-                >
-                  {title}
-                </Text>
-              </a>
+              <Text
+                sx={{ textTransform: "uppercase" }}
+                fontSize={[2, 3, 4]}
+                mt={[3, 3, 0]}
+                mr={[0, 4]}
+                lineHeight="1"
+                color="primary"
+              >
+                {title}
+              </Text>
             )}
             {subtitle && (
               <Text
@@ -176,7 +174,9 @@ const Projects = () => {
         siteUrl="https://ethanleners.com/"
         description="This design portfolio was created by Ethan using Figma. We worked close together to create this portfolio. I used Gatsby to build and Netlify to deploy the site. We used Contentful to load in the content from the blogs."
       />
-      <H1 fontSize={[3, 4, 5]} py={4} pt={3}>More projects to come...</H1>
+      <H1 fontSize={[3, 4, 5]} py={4} pt={3}>
+        More projects to come...
+      </H1>
     </Layout>
   )
 }
