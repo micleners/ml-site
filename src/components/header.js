@@ -8,6 +8,7 @@ import { theme } from "../utils/theme"
 import { Burger } from "./atoms"
 
 import logo from "../images/logo.svg"
+import github from "../images/github2.svg"
 
 const MenuLink = props => (
   <Box
@@ -57,7 +58,6 @@ const Header = props => {
   return (
     <Flex
       backgroundColor={"bg2"}
-      pr={3}
       height="70px"
       width="100%"
       alignItems="center"
@@ -72,21 +72,33 @@ const Header = props => {
         <HeaderLink text="Talks" to="/talks/" display={["flex", "none"]} />
         <HeaderLink text="Blog" to="/blog/" display={["flex", "none"]} />
       </SlidingMenu>
-      <Box
-        as="img"
-        src={logo}
-        p={1}
-        mx={1}
-        height="100%"
-        alignSelf="stretch"
-        alt="white line art icon of person behind a computer"
-      />
+      <Box as="a" href="https://github.com/micleners">
+        <Box
+          as="img"
+          src={logo}
+          title="GitHub"
+          p={1}
+          mx={1}
+          alt="white line art icon of person behind a computer"
+        />
+      </Box>
       <HeaderLink activeClassName="active" text="Michael Leners" to="" />
       <Box flex="1 1 auto" />
       <HeaderLink text="Projects" to="/projects/" display={["none", "flex"]} />
       <HeaderLink text="Talks" to="/talks/" display={["none", "flex"]} />
       <HeaderLink text="Blog" to="/blog/" display={["none", "flex"]} />
-      <Box display={["flex", "none"]}>
+      <Box as="a" height="100%" href="https://github.com/micleners">
+        <Box
+          as="img"
+          src={github}
+          title="GitHub"
+          p={3}
+          height="100%"
+          alignSelf="stretch"
+          alt="white line art icon of person behind a computer"
+        />
+      </Box>
+      <Box mr={3} ml={2} display={["flex", "none"]}>
         <Burger onClick={open => setIsMenuOpen(!isMenuOpen)}>
           <div />
           <div />
