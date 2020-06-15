@@ -19,6 +19,27 @@ const Blog = () => {
           }
         }
       }
+      cypressBlog2: file(relativePath: { eq: "cypress_blog_2.png" }) {
+        childImageSharp {
+          fixed(height: 200) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      dsmHack: file(relativePath: { eq: "dsmhack_blog.png" }) {
+        childImageSharp {
+          fixed(height: 200) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      datathon: file(relativePath: { eq: "datathon_blog.png" }) {
+        childImageSharp {
+          fixed(height: 200) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
     }
   `)
 
@@ -150,30 +171,76 @@ const Blog = () => {
                 View Blog
               </Button>
             </a>
-            <a href={repoUrl} style={{ textDecoration: "none" }}>
-              <Button mr={[0, 4]} mb={[2, 0]}>
-                Code
-              </Button>
-            </a>
+            {repoUrl && (
+              <a href={repoUrl} style={{ textDecoration: "none" }}>
+                <Button mr={[0, 4]} mb={[2, 0]}>
+                  Code
+                </Button>
+              </a>
+            )}
           </Flex>
         </Flex>
       </Flex>
     )
   }
 
+  const CypressBlog1 = () => (
+    <ProjectCard
+      image={data.cypressBlog1.childImageSharp.fixed}
+      title="Cypress for E2E Testing:"
+      subtitle="An Overview of the Platform and Its Uses"
+      date="2/12/20"
+      repoUrl="https://github.com/micleners/cypress-retro"
+      siteUrl="https://www.sourceallies.com/2020/02/cypress-for-e2e-testing-retro/"
+      description="This blog is part of a series on end-to-end (E2E) testing in Cypress. In this post, we will take a look at what Cypress is, why our team chose it, and things you may want to consider when evaluating it for your own projects. Future posts will expound upon how my team uses Cypress and technicals around using Cypress."
+    />
+  )
+
+  const CypressBlog2 = () => (
+    <ProjectCard
+      image={data.cypressBlog2.childImageSharp.fixed}
+      title="Cypress for E2E Testing:"
+      subtitle="How My Team Uses Cypress for End-to-End Testing"
+      date="3/26/20"
+      repoUrl="https://github.com/micleners/cypress-retro"
+      siteUrl="https://www.sourceallies.com/2020/03/team-use-of-cypress/"
+      description="This blog is part of a series on end-to-end (E2E) testing in Cypress. In this post, we will take a look at how our team uses Cypress to benefit our workflow and increase the safety in which we deploy new features."
+    />
+  )
+
+  const DatathonBlog = () => (
+    <ProjectCard
+      image={data.datathon.childImageSharp.fixed}
+      title="Source Allies Takes on the WIDS 2020 Datathon"
+      // subtitle="How My Team Uses Cypress for End-to-End Testing"
+      date="4/9/20"
+      // repoUrl="https://github.com/micleners/cypress-retro"
+      siteUrl="https://www.sourceallies.com/2020/04/sa-takes-on-wids/"
+      description="Every year the Women in Data Science initiative (WiDS) provides a datathon open to teams with an interest in data science regardless of experience. WiDS defines a datathon as a “data-focused hackathon — given a dataset and a limited amount of time..."
+    />
+  )
+
+  const DsmHack = () => (
+    <ProjectCard
+      image={data.dsmHack.childImageSharp.fixed}
+      title="DsmHack and Source Allies Core Values"
+      // subtitle="How My Team Uses Cypress for End-to-End Testing"
+      date="5/4/20"
+      // repoUrl="https://github.com/micleners/cypress-retro"
+      siteUrl="https://www.sourceallies.com/2020/05/dsmhack-sa-core-values/"
+      description="Recently, some of us at Source Allies had the opportunity to participate in the 8th annual dsmHack charity hackathon. We were struck by how much participating in the hack aligned with our core values. At Source Allies, we use our core values as guideposts..."
+    />
+  )
+
+
   return (
     <Layout>
       <SEO title="Blog" />
       <H1>Blog</H1>
-      <ProjectCard
-        image={data.cypressBlog1.childImageSharp.fixed}
-        title="Cypress for E2E Testing:"
-        subtitle="An Overview of the Platform and Its Uses"
-        date="2/12/20"
-        repoUrl="https://github.com/micleners/cypress-retro"
-        siteUrl="https://www.sourceallies.com/2020/02/cypress-for-e2e-testing-retro/"
-        description="This blog is part of a series on end-to-end (E2E) testing in Cypress. In this post, we will take a look at what Cypress is, why our team chose it, and things you may want to consider when evaluating it for your own projects. Future posts will expound upon how my team uses Cypress and technicals around using Cypress."
-      />
+      <DsmHack />
+      <DatathonBlog />
+      <CypressBlog2 />
+      <CypressBlog1 />
       <H1 fontSize={[3, 4, 5]} py={4} pt={3}>
         More blogs to come...
       </H1>

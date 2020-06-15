@@ -164,14 +164,18 @@ export const TalkCard = ({
               Event
             </Button>
           </a>
-          <a href={repoUrl} style={{ textDecoration: "none" }}>
-            <Button mr={[0, 4]} mb={[2, 0]}>
-              Code
-            </Button>
-          </a>
-          <a href={presentationUrl} style={{ textDecoration: "none" }}>
-            <Button>Presentation</Button>
-          </a>
+          {repoUrl && (
+            <a href={repoUrl} style={{ textDecoration: "none" }}>
+              <Button mr={[0, 4]} mb={[2, 0]}>
+                Code
+              </Button>
+            </a>
+          )}
+          {presentationUrl && (
+            <a href={presentationUrl} style={{ textDecoration: "none" }}>
+              <Button>Presentation</Button>
+            </a>
+          )}
         </Flex>
       </Flex>
     </Flex>

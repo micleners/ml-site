@@ -19,6 +19,13 @@ const Projects = () => {
           }
         }
       }
+      patdWebsite: file(relativePath: { eq: "patd_website.png" }) {
+        childImageSharp {
+          fixed(height: 200) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
     }
   `)
 
@@ -165,6 +172,15 @@ const Projects = () => {
     <Layout>
       <SEO title="Projects" />
       <H1>Project</H1>
+      <ProjectCard
+        image={data.patdWebsite.childImageSharp.fixed}
+        title="Pat Denzer"
+        subtitle="Virtual Assistant"
+        date="3/30/20"
+        repoUrl="https://github.com/micleners/patdenzer"
+        siteUrl="https://patd.micleners.com/"
+        description="This brochure website was created for Pat to showcase her Virtual Assistant offerings. It was designed by Ethan using Figma. I used Gatsby to build and Netlify to deploy the site."
+      />
       <ProjectCard
         image={data.ethanPortfolio.childImageSharp.fixed}
         title="Ethan Leners:"
